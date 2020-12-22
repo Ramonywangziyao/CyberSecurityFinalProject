@@ -8,3 +8,10 @@ python eval.py [query data] [clean data]
 
 E.g for badnet1  
 python eva1.py data/clean_validation_data.h5 data/clean_test_data.h5
+
+## P.S
+Need to create 2 folders in order to run  
+1.data  
+2.models    
+
+Please put any data into data folder and networks with weights into models
