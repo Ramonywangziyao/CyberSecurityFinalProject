@@ -47,7 +47,6 @@ model = keras.models.load_model(model_filename)
 # processing
 predicts = []
 correctCount = 0
-
 for i in range(n):
     if i % 20 == 0:
         print("Processing: ", i, "/", n)
