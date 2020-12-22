@@ -47,15 +47,18 @@ model = keras.models.load_model(model_filename)
 # processing
 predicts = []
 correctCount = 0
-
+poison_cnt = 0
 for i in range(n):
     if i % 20 == 0:
         print("Processing: ", i, "/", n)
     x = X[i]
     entropyX = getEntropy(x, cleanX, model, entropyRange)
-    label = n + 1 if entropyX < ethd else np.argmax(model.predict(np.array([x])), axis = 1)[0]
-    if label == int(y[i]) or n+1:
-        correctCount += 1
-    predicts.append(label)
+    if entropyX < ethd:
+      predicts.append(n + 1)
+      poison_cnt += 1
+    else:
+      predicts.append(np.argmax(model.predict(np.array([x])), axis = 1)[0])
 
-print("Accuracy: ", round(correctCount / n * 100, 2), "%")
+accu = np.mean(np.equal(predicts, y))*100
+print("Classification accuracy: ",accu,"%")
+print("Poison data detect: ",poison_cnt,"/",n,", ",poison_cnt/n*100,"%")
