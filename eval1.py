@@ -8,7 +8,7 @@ import cv2
 
 data_filename = str(sys.argv[1])
 clean_data_filename = str(sys.argv[2])
-model_filename = "models/"
+model_filename = "models/sunglasses_bd_net.h5"
 # entropy threshold
 ethd = 0.6
 
