@@ -7,7 +7,7 @@ from tensorflow.keras import initializers
 import cv2
 
 data_filename = str(sys.argv[1])
-clean_data_filename = str(sys.argv[2])
+clean_data_filename = "clean_data/clean_data.h5"
 model_filename = "models/sunglasses_bd_net.h5"
 # entropy threshold
 ethd = 0.28
