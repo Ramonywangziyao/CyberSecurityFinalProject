@@ -22,7 +22,7 @@ def data_loader(path):
     return X, y
 
 def superimpose(img1, img2):
-    result = cv2.addWeighted(img1, 1, img2, 1, 0, dtype = cv2.CV_32F)
+    result = cv2.addWeighted(img1, 1, img2, 0.6, 0, dtype = cv2.CV_32F)
     return result
 
 def getEntropy(img, cleanX, model, entropyRange):
