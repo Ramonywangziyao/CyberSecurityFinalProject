@@ -7,7 +7,7 @@ from tensorflow.keras import initializers
 import cv2
 
 data_filename = str(sys.argv[1])
-clean_data_filename = "clean_data/clean_data.h5"
+clean_data_filename = str(sys.argv[2])
 model_filename = "models/sunglasses_bd_net.h5"
 # entropy threshold
 ethd = 0.28
@@ -39,8 +39,6 @@ def getEntropy(img, cleanX, model, entropyRange):
 
 # data preparation
 X, y = data_loader(data_filename)
-X = X[500:1500]
-y = y[500:1500]
 n = len(X)
 cleanX, cleanY = data_loader(clean_data_filename)
 entropyRange = int(len(cleanX) * 0.1)
