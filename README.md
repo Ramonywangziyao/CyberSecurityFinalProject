@@ -8,7 +8,7 @@ python eval.py [query data]
 (query data should be .h5 files.) 
 
 E.g for badnet1  
-python eva1.py data/clean_validation_data.h5
+python eva1.py query_data_path
 
 - eval1.py for sunglasses_bd_net.h5
 - eval2.py for anonymous_1_bd_net.h5
